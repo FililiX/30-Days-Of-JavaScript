@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <h1>Solution of task 3</h1>
+    <h3 onclick="myFunction(this, 'blue')">Click me to change my color.</h3>
+
+    <script>
+        function myFunction(element, color) 
+        {
+            element.style.color = color;
+        }
+    </script>
+
+    <button onclick="quadraticPromt()">Click to calculate the quad eq</button>
+
+    <script>
+        function quadraticPromt()
+        {
+            let a = prompt("Please enter a:")
+            let b = prompt("Please enter b:")
+            let c = prompt("Please enter c:")
+            x1 = (-b + Math.sqrt(b**2 - 4*a*c)/2*a)
+            alert(x1)
+        }
+    </script>
+
+    <body style="background-color:gray;">
+        <script src="./task3.js"></script>
+        <script src="./exercise.js"></script>
+    </body>
+</html>
