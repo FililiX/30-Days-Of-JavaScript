@@ -53,4 +53,12 @@ function shuffleArray(array) {
 let array = [1,2,3,4,5,6,7,8,9,10,11,12,13]
 console.log(shuffleArray(array));
 
+console.log(array);
+function reverseArray(array){
+    array.reverse()
+    return array
+}
+let array1 = [1,2,3,4,5,6,7,8,9,10,11,12,13]
+console.log(reverseArray(array1))
+
 
