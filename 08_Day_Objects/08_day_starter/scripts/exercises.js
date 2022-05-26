@@ -1,4 +1,5 @@
 
+// declaring a class
 const dog = {
     name: "Archie",
     legs: 4,
@@ -16,7 +17,7 @@ console.log(dog)
 dog.breed = "Huskie"
 // Even setting new functions as properties this way
 dog.getDogInfo = function(){
-    return `${this.name} ${this.legs}`
+    return `${this.name} has ${this.legs} legs!`
 }
 console.log(dog.getDogInfo())
 
@@ -65,7 +66,7 @@ const users = [
     }
     ];
 
-    const products = [
+const products = [
   {
     _id: 'eedfcf',
     name: 'mobile phone',
