@@ -43,3 +43,6 @@ const categorizeCountries = (countries) => {
     return coun;
 }
 console.log(categorizeCountries(countries))
+
+
+
