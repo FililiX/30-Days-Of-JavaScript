@@ -33,7 +33,7 @@ console.log(setOfLanguages.has("German")) // false
 // mini challenge: create a hashmap with counts ofeach language
 counts = []
 for (const l of setOfLanguages) {
-    const filteredLangs = languages.filter((language) => language === l) // ["English", "English",..., "German", "German"]
+    const filteredLangs = languages.filter((language) => language === l) // ["English", "English"] ... ["German", "German"]
     counts.push({lang: l, count: filteredLangs.length}) // { object } 
 }
 console.log(counts)

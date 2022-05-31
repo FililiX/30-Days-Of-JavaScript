@@ -2015,15 +2015,27 @@ const countries = [
 // How many languages are there in the countries object file.
 let languageSet = new Set()
 countries.forEach(country => {
-    languageSet.add(country.languages)
+    languageSet.add(...country.languages)
 })
 
 console.log(languageSet.size) // 250
+console.log(languageSet)
 
 
 // creat a map of the histogram of each language
-// too much work man, maybe later...
+let languagesArray = []
+countries.forEach(country => {
+  languagesArray.push(...country.languages)
+})
 
+let counts = []
+for (const lang of languageSet) {
+  let languages = languagesArray.filter((language) => language == lang)
+  counts.push({language: lang, count: languages.length})
+}
+
+counts.sort((a,b) => b.count - a.count)
+console.log(counts.slice(0,10))
 
 
 
