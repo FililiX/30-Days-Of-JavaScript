@@ -55,6 +55,7 @@ for (const {name, scores, skills, age} of users) {
     console.log(name, scores, skills, age)
 }
 
+
 // Find the persons who have less than two skills
 let array = []
 for (const {name, scores, skills, age} of users) {
