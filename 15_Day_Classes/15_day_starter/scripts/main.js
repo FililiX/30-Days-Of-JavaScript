@@ -1,105 +1,84 @@
 
-
 class Person {
-  constructor(firstName, lastName, age, country, city) {
-    this.firstName = firstName
-    this.lastName = lastName
-    this.age = age
-    this.country = country
-    this.city = city
-    this.score = 0
-    this.skills = []
-  }
-  getFullName() {
-    const fullName = this.firstName + ' ' + this.lastName
-    return fullName
-  }
-  get getScore() {
-    return this.score
-  }
-  get getSkills() {
-    return this.skills
-  }
-  set setScore(score) {
-    this.score += score
-  }
-  set setSkill(skill) {
-    this.skills.push(skill)
-  }
-  getPersonInfo() {
-    let fullName = this.getFullName()
-    let skills =
-      this.skills.length > 0 &&
-      this.skills.slice(0, this.skills.length - 1).join(', ') +
-        ` and ${this.skills[this.skills.length - 1]}`
+	constructor(firstName="Default", lastName="Default", age=18) {
 
-    let formattedSkills = skills ? `He knows ${skills}` : ''
+		// setting values in the constructor
+		this.firstName = firstName
+		this.lastName = lastName
 
-    let info = `${fullName} is ${this.age}. He lives ${this.city}, ${this.country}. ${formattedSkills}`
-    console.log(this)
-    return info
-  }
-  static favoriteSkill() {
-    const skills = ['HTML', 'CSS', 'JS', 'React', 'Python', 'Node']
-    const index = Math.floor(Math.random() * skills.length)
-    console.log('hi')
-    return skills[index]
-  }
+		let _age = age
+		this.setAge = function(age) {_age = age; }
+		this.getAge = function() {return _age; }
+
+
+		// these are properties
+		this.score = 0
+		this.skills = [] 
+	}
+
+	// Method
+	getFullName(){
+		const fullName = this.firstName + " " + this.lastName
+		return fullName
+	}
+
+
+	// Static (class) method
+	static favoriteSkill(){
+		const skills = ['HTML', 'CSS', 'JS', 'React', 'Python', 'Node']
+		const index = Math.floor(Math.random()*skills.length)
+		return skills[index]
+	}
+
+
 }
 
-console.log(Person.favoriteSkill())
+const person1 = new Person("Filipek", "Rakoczy",22)
+const person2 = new Person("Dilda", "koks",50)
 
-class Student extends Person {
-  constructor(firstName, lastName, age, country, city, gender) {
-    super(firstName, lastName, age, country, city)
-    this.gender = gender
-  }
+person2.setAge(10)
+const person3 = new Person()
 
-  saySomething() {
-    console.log('I am a child of the person class')
-  }
-  getPersonInfo() {
-    let fullName = this.getFullName()
-    let skills =
-      this.skills.length > 0 &&
-      this.skills.slice(0, this.skills.length - 1).join(', ') +
-        ` and ${this.skills[this.skills.length - 1]}`
 
-    let formattedSkills = skills ? `He knows ${skills}` : ''
-    let pronoun = this.gender == 'Male' ? 'He' : 'She'
+console.log(person1)
+console.log(person2.getAge())
+console.log(person3)
+console.log(person2.getFullName())
+console.log(person1.skills)
+person2.setSkill = 'Planning'
+person2.setSkill = 'Managing'
+person2.setSkill = 'Organizing'
+console.log(person2.skills)
 
-    let info = `${fullName} is ${this.age}. ${pronoun} lives in ${this.city}, ${this.country}. ${formattedSkills}`
-    console.log(this)
-    return info
-  }
+console.log(Person.favoriteSkill()) // this is a class 
+
+
+
+
+class Student extends Person{
+	saySomething(){
+		console.log("Student is a child of Person")
+	}
 }
 
-const s1 = new Student(
-  'Asabeneh',
-  'Yetayeh',
-  250,
-  'Finland',
-  'Helsinki',
-  'Male'
-)
-const s2 = new Student('Lidiya', 'Tekle', 28, 'Finland', 'Helsinki', 'Female')
-s1.setScore = 1
-s1.setSkill = 'HTML'
-s1.setSkill = 'CSS'
-s1.setSkill = 'JavaScript'
+const stud1 = new Student("First","Last",20)
+console.log(stud1)
+console.log(stud1.saySomething())
+console.log(stud1.getFullName())
 
-s2.setScore = 1
-s2.setSkill = 'Planning'
-s2.setSkill = 'Managing'
-s2.setSkill = 'Organizing'
 
-console.log(s1)
-console.log(s2)
 
-console.log(s1.saySomething())
-console.log(s1.getFullName())
-console.log(s1.getPersonInfo())
 
-console.log(s2.saySomething())
-console.log(s2.getFullName())
-console.log(s2.getPersonInfo())
+
+
+
+
+
+
+
+
+
+
+
+
+
