@@ -13,7 +13,7 @@ class Statistics{
         return this._numbers.length
     }
 
-    sum(){
+    sum(){  
         return this._numbers.reduce((acc, cur) => acc += cur)
     }
     
